@@ -1,0 +1,49 @@
+<!-- Subquery Skalar -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+	<hr />
+
+	
+	
+<pre>SELECT name 
+FROM Country C 
+WHERE 'Europe' = (
+  SELECT continent
+  FROM encompasses
+  WHERE country = C.code
+)
+</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" />
+		<input name="query-text" type="hidden"
+			value="SELECT name 
+FROM Country C 
+WHERE 'Europe' = (
+  SELECT continent
+  FROM encompasses
+  WHERE country = C.code
+)" /> <input name="action"
+			type="hidden" value="send" /> <input name="showqueryplan"
+			type="hidden" value="true" />
+	</form>
+
+
+<p>Kann die Liste der europäischen Länder auch mit obiger Anfrage beantwortet werden?</p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">Ja
+		<li style="padding: 5px">Nein
+	</ol>
+
+
+
+
+</div>

@@ -1,0 +1,64 @@
+<!-- Subquery Skalar -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+	
+<pre>SELECT Name FROM Country C WHERE 'Europe' IN (
+  SELECT Continent
+  FROM Encompasses
+  WHERE Country = C.Code)</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" />
+		<input name="query-text" type="hidden"
+			value="SELECT Name 
+FROM Country C 
+WHERE 'Europe' IN (
+  SELECT Continent
+  FROM Encompasses
+  WHERE Country = C.Code
+)" /> <input name="action"
+			type="hidden" value="send" /> <input name="showqueryplan"
+			type="hidden" value="true" />
+	</form>
+
+
+<pre>SELECT Name FROM Country WHERE Code IN  (
+   SELECT Country 
+   FROM Encompasses 
+   WHERE Continent = 'Europe')</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" />
+		<input name="query-text" type="hidden"
+			value="SELECT Name 
+FROM Country 
+WHERE Code IN  (
+   SELECT Country 
+   FROM Encompasses 
+   WHERE Continent = 'Europe'
+)" /> <input name="action"
+			type="hidden" value="send" /> <input name="showqueryplan"
+			type="hidden" value="true" />
+	</form>
+	
+	
+	<p>Welche der beiden (korrekten) Anfragen zur Ermittlung aller europäischen Länder ist i. Allg. performanter?</p>
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">die erste Anfrage
+		<li style="padding: 5px">die zweite Anfrage
+	</ol>
+
+
+
+
+</div>

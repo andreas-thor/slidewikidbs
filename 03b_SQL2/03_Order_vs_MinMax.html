@@ -1,0 +1,60 @@
+<!-- Order vs. Min/Max -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+
+
+<p>Gesucht ist das kleinste Land mit mehr als 600km². Ist folgende Anfrage korrekt?</p>	
+	
+<pre>SELECT * 
+FROM Country 
+WHERE Area > 600
+ORDER BY Area ASC 
+LIMIT 1</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" />
+		<input name="query-text" type="hidden"
+			value="SELECT * 
+FROM Country 
+WHERE Area > 600
+ORDER BY Area ASC 
+FETCH NEXT 1 ROWS ONLY" /> <input name="action"
+			type="hidden" value="send" /> <input name="showqueryplan"
+			type="hidden" value="true" />
+	</form>
+
+
+<p>Warum ist folgende Lösung besser?</p>
+
+
+<pre>SELECT * 
+FROM Country 
+WHERE Area = (
+  SELECT MIN(Area)
+  FROM Country 
+  WHERE Area > 600
+)</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" />
+		<input name="query-text" type="hidden"
+			value="SELECT * 
+FROM Country 
+WHERE Area = (
+  SELECT MIN(Area)
+  FROM Country 
+  WHERE Area > 600
+)" /> <input name="action"
+			type="hidden" value="send" /> <input name="showqueryplan"
+			type="hidden" value="true" />
+	</form>
+
+
+
+</div>

@@ -1,0 +1,77 @@
+<!-- Average -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+	<hr />
+
+	<p>
+		Economy (<u>Country</u>, Inflation, ...)
+	</p>
+
+	<p>Mit welcher/n Anfrage(n) wird die durchschnittliche Inflation
+		korrekt ermittelt?</p>
+
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px"><code>SELECT AVG(Inflation) FROM
+				Economy</code>
+			<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT AVG(Inflation) FROM Economy" /> <input name="action"
+					type="hidden" value="send" /> <input name="showqueryplan"
+					type="hidden" value="true" />
+			</form>
+		<li style="padding: 5px"><code>SELECT SUM(Inflation) /
+				COUNT(Inflation) FROM Economy</code>
+			<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT SUM(Inflation) / COUNT(Inflation) FROM Economy" /> <input
+					name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>
+		<li style="padding: 5px"><code>SELECT SUM(1.0*Inflation) /
+				COUNT(Inflation) FROM Economy</code>
+			<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT SUM(1.0*Inflation) / COUNT(Inflation) FROM Economy" />
+				<input name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>
+		<li style="padding: 5px"><code>SELECT SUM(Inflation) /
+				COUNT(*) FROM Economy</code>
+			<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT SUM(Inflation) / COUNT(*) FROM Economy" /> <input
+					name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>
+	</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
