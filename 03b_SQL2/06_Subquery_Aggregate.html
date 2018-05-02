@@ -1,0 +1,55 @@
+<!-- Subquery + Aggregation -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p>Wie groß ist Europa?	</p>
+
+<pre>SELECT SUM(E.Percentage/100 * C.Area)
+FROM Encompasses E JOIN Country C 
+ON (E.Country = C.Code)
+WHERE E.Continent = 'Europe'</pre>
+
+	<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT SUM(E.Percentage/100 * C.Area)
+FROM Encompasses E JOIN Country C 
+ON (E.Country = C.Code)
+WHERE E.Continent = 'Europe'" /> <input name="action"
+					type="hidden" value="send" /> <input name="showqueryplan"
+					type="hidden" value="true" />
+			</form>
+			
+<p>Welche Länder sind größer als Europa?</p>
+	<pre>SELECT * 
+FROM Country
+WHERE Area > (
+  SELECT SUM(E.Percentage/100 * C.Area)
+  FROM Encompasses E JOIN Country C 
+  ON (E.Country = C.Code)
+  WHERE E.Continent = 'Europe')</pre>
+
+	<form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT * 
+FROM Country
+WHERE Area > (
+  SELECT SUM(E.Percentage/100 * C.Area)
+  FROM Encompasses E JOIN Country C 
+  ON (E.Country = C.Code)
+  WHERE E.Continent = 'Europe')" /> <input name="action"
+					type="hidden" value="send" /> <input name="showqueryplan"
+					type="hidden" value="true" />
+			</form>
+
+
+
+
+
+</div>
