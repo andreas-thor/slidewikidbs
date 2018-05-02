@@ -1,0 +1,82 @@
+<!-- Group By + Compare -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+	
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+	<p>Gegeben sind die Relation R (rechts) und die folgenden zwei
+		Anfragen, die sich lediglich in den Gruppierungsattributen
+		unterscheiden.</p>
+
+	<ol><li>
+	<code>
+		SELECT A, SUM(C) <br /> FROM R <br /> GROUP BY A <br/> <br/>
+	</code>
+	<li>
+	
+	<code>
+		SELECT A, SUM(C) <br /> FROM R <br /> GROUP BY A<b>, B</b>
+	</code>
+</ol>
+
+	<p>Vergleichen Sie die Anzahl der Tupel im Ergebnis der Anfragen. Das Ergebnis der zweiten Anfrage hat ... </p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">die gleiche Anzahl an Tupel wie die erste Anfrage
+		<li style="padding: 5px">mehr Tupel als die erste Anfrage
+		<li style="padding: 5px">weniger Tupel als die erste Anfrage
+	</ol>
+
+
+	<div class="context-menu-disabled"
+		style="position: absolute; left: 550px; top: 175px; width: 260px; cursor: auto;"
+		tabindex="0">
+
+		<table style="table-layout: fixed">
+
+			<thead>
+				<tr>
+					<th style="width: 33%">A</th>
+					<th style="width: 33%">B</th>
+					<th style="width: 33%">C</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>3</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>3</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>4</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>4</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>3</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>NULL</td>
+					<td>3</td>
+					<td>6</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

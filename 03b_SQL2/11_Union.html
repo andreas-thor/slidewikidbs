@@ -1,0 +1,165 @@
+<!-- Union -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+	<p>Gegeben sind die folgenden Anfragen inkl. der 
+		Anzahl der von ihnen gelieferten Datensätze (Kardinalität).</p>
+
+	<table style="table-layout: fixed; width: 100%">
+
+		<thead>
+			<tr>
+				<th style="width: 10%"></th>
+				<th style="width: 70%">SQL-Query</th>
+				<th style="width: 20%">Kardinalität</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Q1</td>
+				<td><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						<code>
+							SELECT Country FROM IsMember<br /> WHERE Organization = 'EU'
+						</code>
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form></td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<td>Q2</td>
+				<td><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						<code>
+							SELECT Country FROM IsMember<br /> WHERE Organization = 'NATO'
+						</code>
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form></td>
+				<td>29</td>
+			</tr>
+			<tr>
+				<td>Q3</td>
+				<td><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						<code>Q1 UNION Q2</code>
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'
+
+UNION 
+
+SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form></td>
+				<td>37</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<p style="margin-top:250px">Welche Aussagen können getroffen werden?</p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">
+		<form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						Q1 INTERSECT Q2 liefert 25 Datensätze.
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'
+
+INTERSECT
+
+SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form>
+		<li style="padding: 5px"><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						Q1 EXCEPT Q2 liefert 8 Datensätze.
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'
+
+MINUS
+
+SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form>
+		<li style="padding: 5px"><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						Q2 EXCEPT Q1 liefert 4 Datensätze.
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'
+
+MINUS
+
+SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form>
+		<li style="padding: 5px"><form accept-charset="UTF-8"
+						action="http://www.semwebtech.org/sqlfrontend/" method="post"
+						target="_blank">
+						Q1 UNION ALL Q2 liefert 62 Datensätze.
+						<input name="label" type="submit" value="Execute Query" /> <input
+							name="query-text" type="hidden"
+							value="SELECT Country 
+FROM IsMember 
+WHERE Organization = 'EU'
+
+UNION ALL
+
+SELECT Country 
+FROM IsMember 
+WHERE Organization = 'NATO'" />
+						<input name="action" type="hidden" value="send" /> <input
+							name="showqueryplan" type="hidden" value="true" />
+					</form>
+	</ol>
+
+
+
+</div>

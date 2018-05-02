@@ -1,0 +1,71 @@
+<!-- Like -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+<p>Gegeben sind drei Queries, die sich nur im LIKE-Pattern unterscheiden: <br/>
+			<code>SELECT Name FROM Country WHERE Name LIKE ... </code>
+		</p>
+	<ul>
+		<li ><form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				Q1:
+				<code>'% and %'</code>
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT Name
+FROM Country
+WHERE Name LIKE '% and %'" /> <input
+					name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>
+		
+		<li style="padding: 5px"><form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				Q2:
+				<code>'%and%'</code>
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT Name
+FROM Country
+WHERE Name LIKE '%and%'" /> <input
+					name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>
+						
+		<li style="padding: 5px"><form accept-charset="UTF-8"
+				action="http://www.semwebtech.org/sqlfrontend/" method="post"
+				target="_blank">
+				Q2:
+				<code>'%and_%'</code>
+				<input name="label" type="submit" value="Execute Query" /> <input
+					name="query-text" type="hidden"
+					value="SELECT Name
+FROM Country
+WHERE Name LIKE '%and_%'" /> <input
+					name="action" type="hidden" value="send" /> <input
+					name="showqueryplan" type="hidden" value="true" />
+			</form>		
+		
+	</ul>
+
+	<p>Welche Aussagen sind bzgl. der Query-Ergebnisse richtig?</p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">Q1 &sube; Q2 (d.h. das Ergebnis von Q1 ist Teilmenge von Q2)
+		<li style="padding: 5px">Q2 &sube; Q1
+		<li style="padding: 5px">Q2 &sube; Q3
+		<li style="padding: 5px">Q3 &sube; Q2
+		<li style="padding: 5px">Q1 &sube; Q3
+		<li style="padding: 5px">Q3 &sube; Q1
+	</ol>
+
+
+
+</div>

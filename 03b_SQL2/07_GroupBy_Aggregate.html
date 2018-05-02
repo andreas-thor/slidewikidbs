@@ -1,0 +1,44 @@
+<!-- GroupBy + Aggregation -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p>Anzahl der Länder pro Kontinent</p>
+
+	<pre>SELECT Continent, COUNT(*) AS NoCountries
+FROM Encompasses
+GROUP BY Continent</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden"
+			value="SELECT Continent, COUNT(*) AS NoCountries
+FROM Encompasses
+GROUP BY Continent" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+	<p>Größe der Kontinente mit mehr als 40 Ländern</p>
+
+	<pre>SELECT Continent, SUM(E.Percentage / 100 * C.Area)
+FROM Encompasses E JOIN Country C ON (E.Country = C.Code)
+GROUP BY Continent
+HAVING COUNT(C.Code) > 40</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden"
+			value="SELECT Continent, SUM(E.Percentage / 100 * C.Area)
+FROM Encompasses E JOIN Country C ON (E.Country = C.Code)
+GROUP BY Continent
+HAVING COUNT(C.Code) > 40" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+</div>
