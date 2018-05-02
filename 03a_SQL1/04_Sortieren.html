@@ -1,0 +1,62 @@
+<!-- Sortieren -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p>Länder absteigend nach Größe geordnet </p>
+
+	<pre>SELECT Name, Area 
+FROM Country
+ORDER BY Area DESC</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden" value="SELECT name, area 
+FROM Country 
+ORDER BY Area DESC" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+<hr />
+	<p>Länder nach Länge des KFZ-Codes sowie nach Name sortiert</p>
+
+	<pre>SELECT Name, Code
+FROM Country 
+ORDER BY Length(Code), Name</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden"
+			value="SELECT Name, Code 
+FROM Country 
+ORDER BY Length(Code), Name" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+
+<hr />
+	<p>Länder nach Einwohnerdichte sortiert</p>
+
+	<pre>SELECT Name, Population, Area 
+FROM Country 
+ORDER BY Population/Area</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden"
+			value="SELECT Name, Population, Area 
+FROM Country 
+ORDER BY Population/Area" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+</div>
