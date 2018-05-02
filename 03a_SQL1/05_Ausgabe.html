@@ -1,0 +1,53 @@
+<!-- Ausgabe -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p>Bevölkerungsdichte für jedes Land </p>
+
+	<pre>SELECT Name, Population/Area  AS Dichte
+FROM Country</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden" value="SELECT name, population/area AS Dichte 
+FROM Country" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+<hr />
+	<p>Bevölkerungsdichte kategorisiert (hoch, mittel, niedrig) für jedes Land </p>
+
+	<pre>SELECT Name, 
+  CASE
+    WHEN Population/Area > 500 THEN 'hoch' 
+    WHEN Population/Area > 100 THEN 'mittel'
+    ELSE 'niedrig'
+  END AS DichteKategorie
+FROM Country
+WHERE Area > 0 
+ORDER BY DichteKategorie, Name</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden"
+			value="SELECT Name, 
+  CASE 
+    WHEN Population/Area > 500 THEN 'hoch' 
+	WHEN Population/Area > 100 THEN 'mittel' 
+	ELSE 'niedrig' 
+  END AS DichteKategorie 
+FROM Country 
+ORDER BY DichteKategorie, Name" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+
+
+</div>

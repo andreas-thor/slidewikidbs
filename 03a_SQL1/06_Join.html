@@ -1,0 +1,50 @@
+<!-- Join -->
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p>Länder Europas </p>
+
+	<pre>SELECT Name, Continent, Percentage
+FROM Country, Encompasses
+WHERE Country.Code = Encompasses.Country
+AND Continent = 'Europe'</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden" value="SELECT Name, Continent, Percentage
+FROM Country, Encompasses
+WHERE Country.Code = Encompasses.Country
+AND Continent = 'Europe'" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+<hr />
+
+<p>Länder, die nur zu einem Teil in Europa liegen</p> 
+
+<pre>SELECT C.Name, E.Percentage
+FROM Country C 
+JOIN Encompasses E
+ON (C.Code = E.Country)
+WHERE E.Continent = 'Europe' 
+AND E.Percentage < 100</pre>
+
+	<form accept-charset="UTF-8"
+		action="http://www.semwebtech.org/sqlfrontend/" method="post"
+		target="_blank">
+		<input name="label" type="submit" value="Execute Query" /> <input
+			name="query-text" type="hidden" value="SELECT C.Name, E.Percentage
+FROM Country C 
+JOIN Encompasses E
+ON (C.Code = E.Country)
+WHERE E.Continent = 'Europe' 
+AND E.Percentage < 100" />
+		<input name="action" type="hidden" value="send" /> <input
+			name="showqueryplan" type="hidden" value="true" />
+	</form>
+
+</div>

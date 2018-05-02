@@ -1,4 +1,4 @@
-<!-- Join -->
+<!-- Outer-Join-Größe -->
 
 <div class="pptx2html"
 	style="position: relative; width: 960px; height: 720px;">
@@ -10,7 +10,7 @@
 	<p>Wie viele Datensätze liefert die folgende Anfrage zwischen den
 		(nicht leeren) Relationen R (u.a. mit Attribut a) und S (u.a. mit
 		Attribut b)?</p>
-	<pre>SELECT R.*, S.* FROM R JOIN S ON (R.a = S.b)</pre>
+	<pre>SELECT R.*, S.* FROM R LEFT OUTER JOIN S ON (R.a = S.b)</pre>
 
 	<ol style="list-style-type: upper-alpha;">
 		<li style="padding: 5px">Mindestens so viele Datensätze wie in R
@@ -25,10 +25,4 @@
 		<li style="padding: 5px">Maximal das Produkt der Anzahl der
 			Datensätze in R und S.
 	</ol>
-
-	<hr>
-	<p>Was ändert sich, wenn a der Primärschlüssel in R ist?</p>
-	<p>Was ändert sich, wenn statt "JOIN" ein "LEFT OUTER JOIN"
-		verwendet wird?</p>
-
 </div>
