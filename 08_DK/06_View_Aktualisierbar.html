@@ -1,18 +1,44 @@
 <div class="pptx2html"
 	style="position: relative; width: 960px; height: 720px;">
 
-	<p align="right" title="DWI16/1 =   &#013; DWI16/2 =  ">
+	<p align="right" title="DWI16/1 = 23% / 86% / 91% / 18% &#013; DWI16/2 = 27% / 36% / 18% / 73%">
 		<b>http://pingo.upb.de/8043</b>
 	</p>
 
+	<div class="context-menu-disabled"
+		style="position: absolute; right: 0px; top: 70px; cursor: auto; border-with:1px"
+		tabindex="0"><code>
+CREATE TABLE Stundenplan(<br/>
+&nbsp;&nbsp;Tag DATE NOT NULL,<br/>
+&nbsp;&nbsp;Von TIME NOT NULL,<br/>
+&nbsp;&nbsp;Bis TIME NOT NULL,<br/>
+&nbsp;&nbsp;Raum VARCHAR(10) NOT NULL,<br/>
+&nbsp;&nbsp;Plaetze INT,<br/>
+&nbsp;&nbsp;Typ VARCHAR(1),<br/>
+&nbsp;&nbsp;Modul VARCHAR(25),<br/>
+&nbsp;&nbsp;ModulVerant VARCHAR(20),<br/>
+&nbsp;&nbsp;Dozent VARCHAR(20),<br/>
+&nbsp;&nbsp;PRIMARY KEY (Tag, Von, Raum)<br/>
+);</code></div>
+
 
 	<p>
-		Warum ist die View
-		<code>InHoersaal</code>
-		<b>nicht</b> automatisch aktualisierbar (UPDATE-able)?
-
+		Warum ist die View 
+		<code>InHoersaal</code><br/>
+		<b>nicht</b> automatisch aktualisierbar <br/>(UPDATE-able)?
+		<br/><br/>
 	</p>
-
+	
+	<div><code>
+CREATE VIEW InHoersaal AS <br/>
+&nbsp;&nbsp;SELECT Tag, Von, (Bis-Von) AS Dauer, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raum, Modul, Dozent<br/>
+&nbsp;&nbsp;FROM Stundenplan <br/>
+&nbsp;&nbsp;WHERE Typ = 'H';
+	</code>
+	</div>
+	
+<p><br/></p>
 	<ol style="list-style-type: upper-alpha;">
 		<li style="padding: 5px">Die View enthält nicht alle Attribute
 			des Primärschlüssels der darunter liegenden Basis-Relation.
