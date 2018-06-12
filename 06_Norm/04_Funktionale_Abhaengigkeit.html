@@ -1,0 +1,43 @@
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right"
+		title="DWI16/1 = 77% / 60% / 49% &#013; DWI16/2 = 67% / 42% / 50%">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+
+	<p>
+		Gegeben ist das folgende Relationenschema:<br />
+		<code>
+			Stundenplan (<u>Tag</u>, <u>Von</u>, Bis, <u>Raum</u>, Plätze, Typ,
+			...)
+		</code>
+		<br /> u.a. mit den funktionalen Abhängigkeiten <br />
+		<code><b>Von &rarr; Bis</b></code>
+		&nbsp;&nbsp;&nbsp; , &nbsp;&nbsp;&nbsp;
+		<code><b>Bis &rarr; Von</b></code>
+		&nbsp;&nbsp;&nbsp; und &nbsp;&nbsp;&nbsp;
+		<code><b>Raum &rarr; Plätze, Typ</b></code>
+	</p>
+
+	<p>Welche Aussagen sind korrekt?</p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">Wegen den funktionalen Abhängigkeiten <code><b>Von
+				&rarr; Bis</b></code> und <br/><code><b>Bis &rarr; Von</b></code> sind alle Veranstaltungen
+			gleich lang.
+		<li style="padding: 5px">Ist der Datensatz <br />
+		<code>(16.12., 13:45 Uhr, 15:15 Uhr, 'A0.41', 100, 'S')</code><br />
+			in der Tabelle, kann <br>
+		<code>(17.12., 11:30 Uhr, 13:00 Uhr, 'A0.41', 100, 'H')</code><br />
+			nicht eingefügt werden.
+		<li style="padding: 5px">Die funktionalen Abhängigkeiten
+			verhindern, dass sich zwei Veranstaltungen im gleichen Raum
+			(zeitlich) überschneiden.
+	</ol>
+
+</div>
+
+

@@ -1,0 +1,38 @@
+
+<div class="pptx2html"
+	style="position: relative; width: 960px; height: 720px;">
+
+	<p align="right"
+		title="DWI16/1 = 96% / 68% / 20% / 88% / 0% &#013; DWI16/2 = 79% / 43% / 57% / 93% / 21%">
+		<b>http://pingo.upb.de/8043</b>
+	</p>
+
+
+	<p>
+		Welche Anomalien der 1NF treten in der 2NF <b>nicht mehr</b> auf?<br />
+		<br />
+		<code>
+			Stundenplan (<u>Tag</u>, <u>Von</u>, Bis, <u>Raum</u> <i>REFERENCES RaumInfo</i>, <br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Modul, Modul-V., Dozent)
+		</code>
+		<br /> <br />
+		<code>RaumInfo (Raum, Plätze, Typ)</code>
+	</p>
+
+	<ol style="list-style-type: upper-alpha;">
+		<li style="padding: 5px">Löschen der Rauminformationen durch
+			Löschen der einzigen Veranstaltung des Raumes
+		<li style="padding: 5px">Einfügen eines Raumes ohne Veranstaltung
+
+		
+		<li style="padding: 5px">Einfügen einer Veranstaltung ohne Raum
+		<li style="padding: 5px">Aktualisierung der Anzahl der Plätze
+			eines Raums
+		<li style="padding: 5px">Aktualisierung der Modul-Verantwortung
+			eines Moduls
+	</ol>
+
+</div>
+
+
