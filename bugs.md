@@ -5,6 +5,7 @@ Bugs
 
 [SlideWiki Feedback window language is not correct](https://slidewiki.atlassian.net/browse/SWAQ-783)
 
+[Slide Thumbnail is out of sync](https://slidewiki.atlassian.net/browse/SWAQ-833)
 
 Feature requests
 ---
@@ -15,4 +16,4 @@ Feature requests
 + Deleting decks
 + PDF export in landscape format
 + Adding decks to playlists more intuitive (edit decks ...); drag&drop or something like that
-
++ bulk upload of slides in HTML format
